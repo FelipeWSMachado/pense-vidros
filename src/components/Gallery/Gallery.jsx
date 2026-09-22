@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { gallery } from '../../data/gallery'
 import {
   IconWindow,
@@ -10,6 +10,7 @@ import {
   IconBalcony,
   IconTool,
 } from '../../data/icons'
+import GalleryCard from './GalleryCard'
 import Lightbox from './Lightbox'
 import './Gallery.scss'
 
@@ -27,13 +28,6 @@ const iconMap = {
 export default function Gallery() {
   const [activeKey, setActiveKey] = useState(null)
   const activeItem = gallery.find((item) => item.key === activeKey) ?? null
-  const trackRef = useRef(null)
-
-  function scrollByCards(direction) {
-    const track = trackRef.current
-    if (!track) return
-    track.scrollBy({ left: direction * track.clientWidth * 0.8, behavior: 'smooth' })
-  }
 
   return (
     <section id="trabalhos" className="gallery">
@@ -44,51 +38,15 @@ export default function Gallery() {
           <p>Clique em um trabalho para ver as fotos e falar com a gente no WhatsApp.</p>
         </div>
 
-        <div className="gallery__carousel">
-          <button
-            type="button"
-            className="gallery__arrow gallery__arrow--prev"
-            onClick={() => scrollByCards(-1)}
-            aria-label="Trabalhos anteriores"
-          >
-            ‹
-          </button>
-
-          <div className="gallery__track" ref={trackRef}>
-            {gallery.map((item) => {
-              const Icon = iconMap[item.icon]
-              const cover = item.images[0]
-              return (
-                <button
-                  key={item.key}
-                  type="button"
-                  className="gallery__item"
-                  onClick={() => setActiveKey(item.key)}
-                >
-                  {cover ? (
-                    <img src={cover} alt={item.title} loading="lazy" />
-                  ) : (
-                    <div className="gallery__placeholder">
-                      <Icon width="34" height="34" />
-                    </div>
-                  )}
-                  <span className="gallery__label">{item.title}</span>
-                  {item.images.length > 1 && (
-                    <span className="gallery__count">+{item.images.length}</span>
-                  )}
-                </button>
-              )
-            })}
-          </div>
-
-          <button
-            type="button"
-            className="gallery__arrow gallery__arrow--next"
-            onClick={() => scrollByCards(1)}
-            aria-label="Próximos trabalhos"
-          >
-            ›
-          </button>
+        <div className="gallery__grid">
+          {gallery.map((item) => (
+            <GalleryCard
+              key={item.key}
+              item={item}
+              Icon={iconMap[item.icon]}
+              onOpen={() => setActiveKey(item.key)}
+            />
+          ))}
         </div>
       </div>
 
