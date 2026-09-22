@@ -19,7 +19,7 @@ export const services = [
   },
   {
     key: 'guarda-corpo',
-    title: 'Guarda-Corpo e Sacadas',
+    title: 'Guarda-Corpo de Sacadas',
     description: 'Fechamento de sacadas e guarda-corpo em vidro temperado com máxima segurança.',
     icon: 'balcony',
   },
@@ -37,7 +37,7 @@ export const services = [
   },
   {
     key: 'guarda-corpo-escada',
-    title: 'Guarda-Corpo de Escada',
+    title: 'Guarda-Corpo de Escadas',
     description: 'Estrutura em vidro para escadas, unindo segurança e sofisticação ao projeto.',
     icon: 'railing',
   },
