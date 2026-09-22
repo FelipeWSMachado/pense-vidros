@@ -13,6 +13,17 @@ export function whatsappLink(phone, message = 'Olá! Gostaria de um orçamento c
   return `https://wa.me/55${phone}?text=${encodeURIComponent(message)}`
 }
 
+export function telLink(phone) {
+  return `tel:+55${phone}`
+}
+
+export function formatPhone(phone) {
+  const ddd = phone.slice(0, 2)
+  const rest = phone.slice(2)
+  const splitAt = rest.length - 4
+  return `(${ddd}) ${rest.slice(0, splitAt)}-${rest.slice(splitAt)}`
+}
+
 export function mapLinks(address) {
   const q = encodeURIComponent(address)
   return {

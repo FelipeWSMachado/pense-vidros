@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { contact, whatsappLink, mapLinks } from '../../data/contact'
-import { IconWhatsapp, IconMail, IconPin, IconInstagram } from '../../data/icons'
+import { contact, whatsappLink, mapLinks, telLink, formatPhone } from '../../data/contact'
+import { IconWhatsapp, IconMail, IconPin, IconInstagram, IconPhone } from '../../data/icons'
 import './Contact.scss'
 
 export default function Contact() {
@@ -59,6 +59,16 @@ export default function Contact() {
                   </a>
                 </div>
               )}
+            </li>
+            <li>
+              <IconPhone width="22" height="22" />
+              <div className="contact__phones">
+                {contact.whatsapp.map((person) => (
+                  <a key={person.phone} href={telLink(person.phone)}>
+                    {person.name}: {formatPhone(person.phone)}
+                  </a>
+                ))}
+              </div>
             </li>
             <li>
               <IconMail width="22" height="22" />

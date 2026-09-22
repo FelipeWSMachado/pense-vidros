@@ -1,6 +1,6 @@
 // As fotos vêm de src/assets/Imagens/<pasta>/*.jpeg — para adicionar mais,
 // basta soltar o arquivo na pasta correspondente (numeração define a ordem).
-const modules = import.meta.glob('../assets/Imagens/*/*.{jpg,jpeg,png,webp}', {
+const modules = import.meta.glob('../assets/Imagens/*/*.{jpg,jpeg,jfif,png,webp}', {
   eager: true,
   import: 'default',
 })

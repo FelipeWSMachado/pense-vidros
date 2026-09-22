@@ -90,6 +90,12 @@
     }
   }
 
+  &__phones {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
   &__address-btn {
     display: flex;
     align-items: flex-start;

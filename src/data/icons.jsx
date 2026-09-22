@@ -127,3 +127,11 @@ export function IconPin(props) {
     </svg>
   )
 }
+
+export function IconPhone(props) {
+  return (
+    <svg viewBox="0 0 24 24" {...common} {...props}>
+      <path d="M5 4h3.2l1.4 4.2-2 1.6a11 11 0 0 0 5.6 5.6l1.6-2L19 14.8V18a1.6 1.6 0 0 1-1.7 1.6A15.4 15.4 0 0 1 3.4 5.7 1.6 1.6 0 0 1 5 4Z" />
+    </svg>
+  )
+}
