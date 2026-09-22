@@ -1,0 +1,85 @@
+@use '../../styles/variables' as *;
+
+.wa-float {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+
+  &__btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: $gradient-brand;
+    color: $color-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: $shadow-strong;
+    animation: wa-pulse 2.4s infinite;
+
+    &:hover {
+      animation: none;
+      transform: scale(1.06);
+    }
+  }
+
+  &__menu {
+    background: $color-white;
+    border-radius: $radius-md;
+    box-shadow: $shadow-strong;
+    padding: 16px;
+    min-width: 190px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    p {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: $color-text-light;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: $radius-sm;
+      font-weight: 600;
+      color: $color-text;
+      background: $color-bg-soft;
+      transition: background 0.2s ease, color 0.2s ease;
+
+      svg {
+        color: $color-green;
+      }
+
+      &:hover {
+        background: $gradient-brand;
+        color: $color-white;
+
+        svg {
+          color: $color-white;
+        }
+      }
+    }
+  }
+}
+
+@keyframes wa-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba($color-green, 0.45), $shadow-strong;
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba($color-green, 0), $shadow-strong;
+  }
+}

@@ -1,0 +1,74 @@
+@use '../../styles/variables' as *;
+
+.services {
+  padding-block: 90px;
+
+  &__inner {
+    @include container;
+  }
+
+  &__header {
+    max-width: 60ch;
+
+    h2 {
+      margin-top: 16px;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+    }
+
+    p {
+      margin-top: 14px;
+      color: $color-text-light;
+    }
+  }
+
+  &__grid {
+    margin-top: 48px;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(1, 1fr);
+
+    @media (min-width: $breakpoint-sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include desktop {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__card {
+    background: $color-white;
+    border: 1px solid rgba($color-teal-dark, 0.08);
+    border-radius: $radius-md;
+    padding: 28px 24px;
+    box-shadow: $shadow-soft;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: $shadow-strong;
+    }
+
+    h3 {
+      margin-top: 18px;
+      font-size: 1.05rem;
+    }
+
+    p {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: $color-text-light;
+    }
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: $radius-sm;
+    background: $gradient-brand;
+    color: $color-white;
+  }
+}

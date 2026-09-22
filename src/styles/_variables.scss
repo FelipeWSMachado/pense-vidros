@@ -1,0 +1,64 @@
+// Paleta extraída da logo Pense Vidros
+$color-charcoal: #4a4b4d;
+$color-charcoal-dark: #2e2f30;
+$color-green: #2f8f45;
+$color-green-light: #8dc63f;
+$color-teal: #17968f;
+$color-teal-dark: #1c6f82;
+
+$color-bg: #ffffff;
+$color-bg-soft: #f4f7f6;
+$color-bg-dark: #1c2427;
+
+$color-text: #33383a;
+$color-text-light: #6b7375;
+$color-white: #ffffff;
+
+$gradient-brand: linear-gradient(
+  100deg,
+  $color-green-light 0%,
+  $color-green 30%,
+  $color-teal 65%,
+  $color-teal-dark 100%
+);
+
+$gradient-brand-soft: linear-gradient(
+  135deg,
+  rgba($color-green-light, 0.12),
+  rgba($color-teal-dark, 0.12)
+);
+
+$font-heading: 'Poppins', 'Segoe UI', sans-serif;
+$font-body: 'Inter', 'Segoe UI', sans-serif;
+
+$radius-sm: 8px;
+$radius-md: 14px;
+$radius-lg: 24px;
+
+$shadow-soft: 0 10px 30px rgba(28, 36, 39, 0.08);
+$shadow-strong: 0 20px 45px rgba(28, 36, 39, 0.16);
+
+$max-width: 1180px;
+
+$breakpoint-sm: 480px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+
+@mixin container {
+  width: 100%;
+  max-width: $max-width;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+@mixin mobile {
+  @media (max-width: #{$breakpoint-md - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-md) {
+    @content;
+  }
+}

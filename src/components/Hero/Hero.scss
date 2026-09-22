@@ -1,0 +1,61 @@
+@use '../../styles/variables' as *;
+
+.hero {
+  position: relative;
+  padding-top: 150px;
+  padding-bottom: 80px;
+  overflow: hidden;
+  background: radial-gradient(circle at 85% 10%, rgba($color-green-light, 0.14), transparent 55%),
+    radial-gradient(circle at 5% 90%, rgba($color-teal-dark, 0.12), transparent 55%), $color-bg;
+
+  &__inner {
+    @include container;
+    display: grid;
+    gap: 48px;
+    align-items: center;
+
+    @include desktop {
+      grid-template-columns: 1.1fr 0.9fr;
+    }
+  }
+
+  &__content {
+    h1 {
+      margin-top: 18px;
+      font-size: clamp(2rem, 4.5vw, 3.1rem);
+      font-weight: 700;
+
+      span {
+        background: $gradient-brand;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+    }
+
+    p {
+      margin-top: 20px;
+      max-width: 46ch;
+      color: $color-text-light;
+      font-size: 1.05rem;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  &__art {
+    display: flex;
+    justify-content: center;
+
+    svg {
+      width: 100%;
+      max-width: 380px;
+      filter: drop-shadow(0 25px 40px rgba(28, 111, 130, 0.25));
+    }
+  }
+}
