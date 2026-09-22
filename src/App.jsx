@@ -4,6 +4,7 @@ import Hero from './components/Hero/Hero'
 import About from './components/About/About'
 import Services from './components/Services/Services'
 import Gallery from './components/Gallery/Gallery'
+import ServiceAreas from './components/ServiceAreas/ServiceAreas'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 import WhatsappFloat from './components/WhatsappFloat/WhatsappFloat'
@@ -18,6 +19,7 @@ function App() {
         <About />
         <Services />
         <Gallery />
+        <ServiceAreas />
         <Contact />
       </main>
       <Footer />
