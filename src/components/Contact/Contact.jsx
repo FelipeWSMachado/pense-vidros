@@ -1,8 +1,12 @@
-import { contact, whatsappLink } from '../../data/contact'
+import { useState } from 'react'
+import { contact, whatsappLink, mapLinks } from '../../data/contact'
 import { IconWhatsapp, IconMail, IconPin, IconInstagram } from '../../data/icons'
 import './Contact.scss'
 
 export default function Contact() {
+  const [mapsOpen, setMapsOpen] = useState(false)
+  const maps = mapLinks(contact.address)
+
   return (
     <section id="contato" className="contact">
       <div className="contact__inner">
@@ -32,9 +36,29 @@ export default function Contact() {
 
         <div className="contact__card">
           <ul>
-            <li>
-              <IconPin width="22" height="22" />
-              <span>{contact.address}</span>
+            <li className="contact__address">
+              <button
+                type="button"
+                className="contact__address-btn"
+                onClick={() => setMapsOpen((v) => !v)}
+              >
+                <IconPin width="22" height="22" />
+                <span>{contact.address}</span>
+              </button>
+
+              {mapsOpen && (
+                <div className="contact__maps-menu">
+                  <a href={maps.google} target="_blank" rel="noreferrer">
+                    Google Maps
+                  </a>
+                  <a href={maps.waze} target="_blank" rel="noreferrer">
+                    Waze
+                  </a>
+                  <a href={maps.apple} target="_blank" rel="noreferrer">
+                    Apple Maps
+                  </a>
+                </div>
+              )}
             </li>
             <li>
               <IconMail width="22" height="22" />

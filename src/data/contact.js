@@ -12,3 +12,12 @@ export const contact = {
 export function whatsappLink(phone, message = 'Olá! Gostaria de um orçamento com a Pense Vidros.') {
   return `https://wa.me/55${phone}?text=${encodeURIComponent(message)}`
 }
+
+export function mapLinks(address) {
+  const q = encodeURIComponent(address)
+  return {
+    google: `https://www.google.com/maps/search/?api=1&query=${q}`,
+    waze: `https://waze.com/ul?q=${q}&navigate=yes`,
+    apple: `https://maps.apple.com/?q=${q}`,
+  }
+}
