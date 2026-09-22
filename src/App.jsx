@@ -2,6 +2,7 @@ import Header from './components/Header/Header'
 import Hero from './components/Hero/Hero'
 import About from './components/About/About'
 import Services from './components/Services/Services'
+import Gallery from './components/Gallery/Gallery'
 import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 import WhatsappFloat from './components/WhatsappFloat/WhatsappFloat'
@@ -14,6 +15,7 @@ function App() {
         <Hero />
         <About />
         <Services />
+        <Gallery />
         <Contact />
       </main>
       <Footer />

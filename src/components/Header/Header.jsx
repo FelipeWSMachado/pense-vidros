@@ -5,6 +5,7 @@ import './Header.scss'
 const links = [
   { href: '#inicio', label: 'Início' },
   { href: '#servicos', label: 'Serviços' },
+  { href: '#trabalhos', label: 'Trabalhos' },
   { href: '#sobre', label: 'Sobre' },
   { href: '#contato', label: 'Contato' },
 ]
