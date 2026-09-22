@@ -6,38 +6,21 @@
   inset-inline: 0;
   z-index: 90;
   height: $verse-bar-height;
-  overflow: hidden;
   background: $gradient-brand;
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding-inline: 16px;
+  text-align: center;
 
-  &__track {
-    display: flex;
-    flex-wrap: nowrap;
-    width: max-content;
-    animation: verse-scroll 32s linear infinite;
-
-    @media (prefers-reduced-motion: reduce) {
-      animation: none;
-    }
-  }
-
-  &__item {
-    flex-shrink: 0;
-    padding-inline: 32px;
+  &__text {
     color: $color-white;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.02em;
+    overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
-  }
-}
-
-@keyframes verse-scroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
+    max-width: 100%;
   }
 }

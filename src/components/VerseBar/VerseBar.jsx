@@ -5,13 +5,8 @@ const verse =
 
 export default function VerseBar() {
   return (
-    <div className="verse-bar" role="note" aria-label={verse}>
-      <div className="verse-bar__track" aria-hidden="true">
-        <span className="verse-bar__item">{verse}</span>
-        <span className="verse-bar__item">{verse}</span>
-        <span className="verse-bar__item">{verse}</span>
-        <span className="verse-bar__item">{verse}</span>
-      </div>
+    <div className="verse-bar" role="note">
+      <span className="verse-bar__text">{verse}</span>
     </div>
   )
 }
