@@ -22,29 +22,62 @@
     }
   }
 
-  &__grid {
+  &__carousel {
     margin-top: 44px;
-    display: grid;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__track {
+    flex: 1;
+    display: flex;
     gap: 18px;
-    grid-template-columns: repeat(2, 1fr);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding-block: 4px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
 
-    @media (min-width: $breakpoint-sm) {
-      grid-template-columns: repeat(3, 1fr);
+    &::-webkit-scrollbar {
+      display: none;
     }
+  }
 
-    @include desktop {
-      grid-template-columns: repeat(4, 1fr);
+  &__arrow {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: $color-white;
+    color: $color-charcoal-dark;
+    font-size: 1.7rem;
+    line-height: 1;
+    box-shadow: $shadow-soft;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-strong;
     }
   }
 
   &__item {
     position: relative;
     display: block;
+    flex: 0 0 auto;
+    width: min(72vw, 260px);
+    scroll-snap-align: start;
     aspect-ratio: 4 / 3;
     border-radius: $radius-md;
     overflow: hidden;
     box-shadow: $shadow-soft;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    text-align: left;
 
     img {
       width: 100%;
@@ -63,6 +96,19 @@
       inset: 0;
       background: linear-gradient(0deg, rgba(15, 20, 22, 0.78) 0%, rgba(15, 20, 22, 0.05) 55%);
     }
+  }
+
+  &__count {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    padding: 3px 9px;
+    border-radius: 999px;
+    background: rgba(15, 20, 22, 0.55);
+    color: $color-white;
+    font-size: 0.72rem;
+    font-weight: 700;
   }
 
   &__placeholder {
