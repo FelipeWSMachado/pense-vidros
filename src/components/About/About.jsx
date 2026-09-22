@@ -6,8 +6,8 @@ const highlights = [
     text: 'Visita técnica e medição precisa para cada ambiente, sem surpresas.',
   },
   {
-    title: 'Fabricação própria',
-    text: 'Vidro temperado com controle de qualidade em todas as etapas.',
+    title: 'Revenda autorizada',
+    text: 'Vidro temperado de procedência garantida, com qualidade e segurança certificadas.',
   },
   {
     title: 'Instalação especializada',

@@ -13,7 +13,7 @@ export default function Hero() {
           </h1>
           <p>
             Box para banheiro, janelas, portas, guarda-corpos, espelhos e fechamento de
-            sacadas. Projeto, fabricação e instalação com acabamento de alta qualidade em
+            sacadas. Projeto, venda e instalação com acabamento de alta qualidade em
             Laurentino e região.
           </p>
 
