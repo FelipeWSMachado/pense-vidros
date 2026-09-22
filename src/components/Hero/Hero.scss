@@ -4,6 +4,10 @@
   position: relative;
   padding-top: calc(#{$header-height} + #{$verse-bar-height} + 40px);
   padding-bottom: 80px;
+
+  @include mobile {
+    padding-top: calc(#{$header-height} + #{$verse-bar-height-mobile} + 32px);
+  }
   overflow: hidden;
   background: radial-gradient(circle at 85% 10%, rgba($color-green-light, 0.14), transparent 55%),
     radial-gradient(circle at 5% 90%, rgba($color-teal-dark, 0.12), transparent 55%), $color-bg;

@@ -108,7 +108,7 @@
   @include mobile {
     &__nav {
       position: absolute;
-      top: $header-height + $verse-bar-height;
+      top: $header-height + $verse-bar-height-mobile;
       left: 0;
       right: 0;
       flex-direction: column;

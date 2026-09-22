@@ -9,6 +9,10 @@ body {
 
 section[id] {
   scroll-margin-top: $header-height + $verse-bar-height;
+
+  @include mobile {
+    scroll-margin-top: $header-height + $verse-bar-height-mobile;
+  }
 }
 
 h1,
