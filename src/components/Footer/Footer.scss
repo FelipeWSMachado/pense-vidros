@@ -19,10 +19,17 @@
     }
   }
 
+  &__badge {
+    display: inline-flex;
+    align-items: center;
+    background: $color-white;
+    border-radius: $radius-sm;
+    padding: 8px 14px;
+  }
+
   &__logo {
-    height: 28px;
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
+    height: 22px;
+    width: auto;
   }
 
   p {
