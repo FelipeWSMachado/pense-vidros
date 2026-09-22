@@ -8,7 +8,7 @@ export default function Hero() {
     <section id="inicio" className="hero">
       <div className="hero__inner">
         <div className="hero__content">
-          <span className="section-tag">Vidraçaria Pense Vidros</span>
+          <span className="section-tag">Você, vidrado com o que fazemos</span>
           <h1>
             Vidro temperado sob medida para <span>transformar</span> o seu ambiente
           </h1>

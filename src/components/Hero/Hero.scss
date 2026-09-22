@@ -2,7 +2,7 @@
 
 .hero {
   position: relative;
-  padding-top: 150px;
+  padding-top: calc(#{$header-height} + #{$verse-bar-height} + 40px);
   padding-bottom: 80px;
   overflow: hidden;
   background: radial-gradient(circle at 85% 10%, rgba($color-green-light, 0.14), transparent 55%),

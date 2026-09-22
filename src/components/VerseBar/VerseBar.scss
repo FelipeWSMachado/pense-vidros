@@ -1,0 +1,43 @@
+@use '../../styles/variables' as *;
+
+.verse-bar {
+  position: fixed;
+  top: $header-height;
+  inset-inline: 0;
+  z-index: 90;
+  height: $verse-bar-height;
+  overflow: hidden;
+  background: $gradient-brand;
+  display: flex;
+  align-items: center;
+
+  &__track {
+    display: flex;
+    flex-wrap: nowrap;
+    width: max-content;
+    animation: verse-scroll 32s linear infinite;
+
+    @media (prefers-reduced-motion: reduce) {
+      animation: none;
+    }
+  }
+
+  &__item {
+    flex-shrink: 0;
+    padding-inline: 32px;
+    color: $color-white;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+}
+
+@keyframes verse-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

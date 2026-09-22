@@ -18,7 +18,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 20px;
-    height: 76px;
+    height: $header-height;
   }
 
   &__brand img {
@@ -108,7 +108,7 @@
   @include mobile {
     &__nav {
       position: absolute;
-      top: 76px;
+      top: $header-height + $verse-bar-height;
       left: 0;
       right: 0;
       flex-direction: column;

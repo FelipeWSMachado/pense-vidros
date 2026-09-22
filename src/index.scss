@@ -7,6 +7,10 @@ body {
   background: $color-bg;
 }
 
+section[id] {
+  scroll-margin-top: $header-height + $verse-bar-height;
+}
+
 h1,
 h2,
 h3,
